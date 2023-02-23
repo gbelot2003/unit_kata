@@ -1,4 +1,5 @@
-import { A, B, C, D, Item } from "./Items"
+import { A, B, C, D } from "./Items"
+import { Item } from "./Item.interface"
 
 export function itemFactory(itemChar: string) : Item {
     if (itemChar === 'A') return new A()

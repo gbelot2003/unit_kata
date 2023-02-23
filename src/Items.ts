@@ -1,12 +1,8 @@
+import { Item } from "./Item.interface";
 const A_PRICE = 50;
 const B_PRICE = 30;
 const C_PRICE = 20;
 const D_PRICE = 15;
-
-export interface Item {
-    getPrice(): number
-}
-
 
 export class A implements Item {
     getPrice(): number {
