@@ -1,6 +1,8 @@
-import { checkout } from "../src/checkout"
+import { Store } from "../src/checkout"
 
 describe('checkout test', () => {
+    const checkout = new Store().checkout
+    
     it('should return 0 when no items are send', () => {
         expect(checkout("")).toBe(0)
     })
