@@ -1,11 +1,4 @@
-import { A } from "./A"
-import { B } from "./B"
-import { C } from "./C"
-import { D } from "./D"
-
-export interface Item {
-    getPrice(): number
-}
+import { A, B, C, D, Item } from "./Items"
 
 export function itemFactory(itemChar: string) : Item {
     if (itemChar === 'A') return new A()
