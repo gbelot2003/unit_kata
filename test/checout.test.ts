@@ -37,5 +37,16 @@ describe('checkout test', () => {
         expect(() => checkout("Z")).toThrow('Something bad happened')
     })
 
+    it('should apply a discount when having 3 As', () => {
+        expect(checkout("AAA")).toBe(130)
+    })
+
+    it('should apply twice the discount when having 8 As', () => {
+        expect(checkout("AAAAAAAA")).toBe(360)
+    })
+
+    it('should apply a discount when having 3 Bs', () => {
+        expect(checkout("BBB")).toBe(75)
+    })
 
 })
