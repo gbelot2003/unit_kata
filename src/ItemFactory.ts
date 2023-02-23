@@ -14,3 +14,10 @@ export function itemFactory(itemChar: string) : Item {
     if (itemChar === 'D') return new D()
     throw new Error("Something bad happened")
 }
+
+export enum ItemType {
+    A = 'A',
+    B = 'B',
+    C = 'C',
+    D = 'D'
+}

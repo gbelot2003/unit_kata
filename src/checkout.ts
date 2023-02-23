@@ -1,4 +1,5 @@
-import { itemFactory } from "./ItemFactory";
+import { itemFactory, ItemType } from "./ItemFactory";
+import { Discount } from "./Discounts";
 
 export function checkout(itemsList: string): number {
 
@@ -8,11 +9,11 @@ export function checkout(itemsList: string): number {
         total += item.getPrice()
     }
 
-    const A_counter = itemsList.split("").filter((item) => item === "A").length;
-    total -= Math.trunc(A_counter / 3) * 20;
+    const discountA = new Discount(ItemType.A, 3, 20)
+    total -= discountA.calculateDiscount(itemsList);
 
-    const B_counter = itemsList.split("").filter((item) => item === "B").length;
-    total -= Math.trunc(B_counter / 2) * 15;
+    const discountB = new Discount(ItemType.B, 2, 15)
+    total -= discountB.calculateDiscount(itemsList);
 
     return total;
 }
